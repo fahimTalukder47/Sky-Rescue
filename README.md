@@ -1,64 +1,127 @@
 # Sky Rescue
 
-## 1. Game Description
-**Sky Rescue** is a 2D side-scrolling helicopter simulation and rescue game inspired by disaster relief operations in Chattogram, Bangladesh. Players control an elite rescue pilot navigating a helicopter through treacherous environments to save stranded civilians. The game features three escalating difficulty sectors (Flood Basin, Mudslide, and Thunderstorm), resource management (fuel and passenger capacity), and an intense final boss fight against a rogue aircraft.
+## Game Description
 
-## 2. Project Details
-The primary objective of this project is to develop an interactive, engaging, and fully playable 2D game using the C++ programming language and the iGraphics library. 
-* **Target Gameplay Duration:** Minimum 10-15 minutes to complete all sectors.
-* **Core Loop:** Fly, rescue civilians, return to the hospital helipad to drop them off and refuel, and survive environmental hazards.
-* **Theme:** Disaster relief, tactical flight simulation, and heroic rescue operations.
+**Sky Rescue** is a 2D arcade-style helicopter rescue simulation created using the iGraphics library in C/C++. The player flies an emergency rescue helicopter to save stranded citizens from rooftops during floods and landslides, using a winch cable to hoist them up and a hospital helipad to drop them off.
 
-### Key Features
-* **Advanced 3-Lives System:** Players have 3 lives instead of 1-hit deaths. Crashing or taking damage triggers a bounce-back mechanic and temporary invulnerability (blinking effect).
-* **Boss Fight (Rogue Storm Zephyr):** A challenging Sector 3 encounter featuring a boss with a health bar, horizontal patrol AI, and plasma projectiles. The player can defeat the boss using flares/EMP.
-* **Dynamic Resource Management:** Real-time tracking of fuel consumption and maximum passenger capacity.
-* **Custom UI & HUD:** Image-based graphical UI tracking lives (hearts), fuel bars, and capacity load.
-* **Persistent Career Progression:** The game automatically saves career rescue counts and unlocked sectors using a local text file.
-* **Procedural Hazards:** Dynamically generated flocks of birds, random building heights, and environmental obstacles.
+The game was inspired by the recent floods and landslides in Chattogram, Bangladesh.
 
+## Features
 
-## 3. Technical Architecture
-The project is built using a modular C++ architecture to separate concerns and maintain clean code.
-* **Language:** C++
-* **Graphics Library:** iGraphics (A lightweight wrapper over OpenGL and GLUT)
-* **File Structure:**
-  * `iMain.cpp`: Application entry point, iGraphics initialization, and event callbacks.
-  * `Variables.h`: Global state management, data structures for the player, enemies, and UI.
-  * `Rendering.h`: All drawing logic (menus, HUD, environment, sprites).
-  * `Physics.h`: Collision detection, flight dynamics, and frame-by-frame updates.
-  * `Rescue.h`: Logic for spawning civilians, hoisting mechanics, and dropping them off.
-  * `Hazards.h`: Enemy AI (birds, Boss logic) and obstacle generation.
-  * `Menu.h`: Menu navigation, input boxes, and screen state transitions.
-  * `Leaderboard.h`: File I/O operations for saving and loading player progress.
+- Gravity-based helicopter flight with engine lift and smooth steering.
+- Winch and hook system to rescue survivors from rooftops (up to 3 at a time).
+- Fuel system with refueling at the base helipad and falling fuel cans.
+- 3 lives system with a short shield after taking damage.
+- 3 levels (Beginner, Intermediate, Expert), each with 3 sectors (Flood Basin, Mud & Landslide, Thunder Storm) – 9 sectors in total.
+- Hazards: birds, eagles, falling rocks, drones, and lightning clouds.
+- Rescue flares, Sky Blast EMP, and air-dropped medkits (life jacket and medkit box).
+- Enemy helicopter battle in Sector 3.
+- Pilot registration, top 5 high score leaderboard, and sound effects.
+- Data saved in text files: `highscores.txt` (high scores) and `progress.txt` (pilot progress).
 
-## 4. How to Run the Project
-**Prerequisites:** Microsoft Visual Studio or a compatible C++ IDE with iGraphics/OpenGL configured.
+## Project Details
 
-1. Open the project folder
-2. Open the Visual Studio Solution file (`.sln`).
-3. Ensure the linker settings are properly configured with the standard iGraphics dependencies:
-   * `opengl32.lib`, `glu32.lib`, `glut32.lib`
-4. Build the solution (Shortcut: `Ctrl + Shift + B`).
-5. Run the executable (Shortcut: `F5`).
+| Item | Details |
+|---|---|
+| IDE | Visual Studio 2010/2013 |
+| Language | C, C++ |
+| Platform | Windows PC |
+| Genre | 2D arcade rescue simulation |
+| Teamwork | GitHub and Gmail |
 
-## 5. How to Play
+## How to Run the Project
+
+Make sure you have the following installed:
+
+- Visual Studio 2013
+- MinGW Compiler (if needed)
+- iGraphics Library (included in this repository)
+
+### Steps
+
+1. Open Visual Studio 2013.
+2. Go to **File → Open → Project/Solution**.
+3. Locate and select the `.sln` file from the cloned repository.
+4. Make sure `enemy.png` and the other image files are in the project folder (or its `Images` folder).
+5. Click **Build → Build Solution**.
+6. Run the program by clicking **Debug → Start Without Debugging**.
+
+## How to Play
+
 ### Controls
-* **Mouse Movement:** Steer the helicopter. Move the mouse smoothly to guide the aircraft.
-* **Left Mouse Button:** Click UI buttons in the menu / Deploy flares during the Boss fight.
-* **Spacebar:** Lower the rescue hoist to pick up survivors from buildings.
-* **ESC Key:** Pause the game / Return to the main menu.
 
-## 6. Game Rules
-1. **Rescue Quotas:** You must rescue a specific number of civilians to complete each sector and unlock the next one.
-2. **Fuel Limitation:** Flying drains fuel. Return to the Hospital Helipad to refuel before hitting zero.
-3. **Weight Limit:** Your helicopter can only carry a maximum number of passengers at a time. Drop them off at the Hospital to free up space.
-4. **Avoid Hazards:** Hitting buildings, birds, or enemy projectiles will cost you 1 life. 
-5. **Survival:** You have a maximum of 3 lives per run. Losing all 3 lives results in a Game Over.
-6. **Victory Condition:** Reach Sector 3, survive the thunderstorm, and deplete the Boss's health bar to zero to win the game.
+| Action | Keys |
+|---|---|
+| Lift up | Space / W / ↑ or hold Left Mouse Button |
+| Move Left | A / ← |
+| Move Right | D / → |
+| Lower winch hook | Hold Q |
+| Drop medkit | S / ↓ |
+| Shoot flare | F / X |
+| Sky Blast EMP | E |
+| Pause / Resume | P |
+| Back to menu | ESC |
+| Retry (Game Over) | R |
 
+## Game Rules
 
-## 7. Project Contributors
-* **[MD Fahim Talukder / 00725105101056]** 
-* **[Hasibul Hasan Shuvo / 00725105101030]** 
-* **[Rafsan Sarker / 00725105101055]** 
+- The helicopter starts with 3 lives and 100% fuel.
+- Hold **Q** above a survivor to lower the hook; the survivor is reeled in automatically.
+- The helicopter carries a maximum of 3 survivors.
+- Fly to the base helipad (left side) to drop them off, refuel, and restock medkits.
+- Points:
+  - 100 per survivor delivered
+  - +150 bonus for 3 survivors delivered at once
+  - +150 per medkit delivered
+  - +60 per hazard shot
+- Hitting a hazard, building, or the ground costs 1 life.
+- The game ends when all lives are lost or fuel reaches 0.
+
+## Levels and Rescue Quota
+
+There are 3 levels and each level has 3 sectors (9 sectors in total).
+
+| Level | Sector 1 | Sector 2 | Sector 3 |
+|---|---:|---:|---:|
+| Level 1: Beginner | 15 | 20 | 25 |
+| Level 2: Intermediate | 20 | 25 | 30 |
+| Level 3: Expert | 25 | 30 | 35 |
+
+In Sector 3, meet the quota and destroy the enemy helicopter to win.
+
+## Data Files
+
+| File | Purpose |
+|---|---|
+| `highscores.txt` | Stores the top 5 pilot names and high scores. |
+| `progress.txt` | Stores the pilot's progress (name, level, sector, score, total rescues and missions). |
+
+## Project Contributors
+
+1. **Hasibul Hasan Shuvo** – Flight physics, rendering, hazards, helipad landing, enemy helicopter
+2. **MD. Fahim Talukder** – Image assets, menus, pilot registration, variables, leaderboard and data files, project integration
+3. **Rafsan Sarker** – Survivor rescue and winch system, 3 lives, fuel system, HUD and sound
+
+Teamwork was managed using GitHub (repository, branches, commits, pull requests) and Gmail (sharing files and coordination).
+
+## Screenshots
+
+### Menu
+
+<img src="main_menu.jpg" width="300">
+
+### Rescue Helicopter
+
+<img src="rescue_helicopter.png" width="300">
+
+### Enemy Helicopter
+
+<img src="enemy_helicopter.png" width="300">
+
+## YouTube Link
+
+**CSE 1200 Project: Sky Rescue**
+
+## Project Report
+
+**Project Report: Sky Rescue**
