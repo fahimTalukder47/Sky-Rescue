@@ -108,15 +108,18 @@ Teamwork was managed using GitHub (repository, branches, commits, pull requests)
 
 ### Menu
 
-<img src="main_menu.jpg" width="300">
+<img src="<img width="1079" height="606" alt="main_menu" src="https://github.com/user-attachments/assets/9bd60fe4-8df0-423c-a04b-feafb86a18d2" />
+" width="300">
 
 ### Rescue Helicopter
 
-<img src="rescue_helicopter.png" width="300">
+<img src="<img width="1695" height="900" alt="rescue_helicopter" src="https://github.com/user-attachments/assets/8869f17a-a398-43d9-a41f-00d6b8b0cb82" />
+" width="300">
 
 ### Enemy Helicopter
 
-<img src="enemy_helicopter.png" width="300">
+<img src=""<img width="1571" height="555" alt="enemy_helicopter" src="https://github.com/user-attachments/assets/deaa04ee-aa27-4308-ab51-22d9fbc8783b" />
+ width="300">
 
 ## YouTube Link
 
