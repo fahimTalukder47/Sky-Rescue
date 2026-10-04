@@ -122,8 +122,7 @@ Teamwork was managed using GitHub (repository, branches, commits, pull requests)
  width="300">
 
 ## YouTube Link
-
-**CSE 1200 Project: Sky Rescue**
+**https://youtu.be/C7QLhoz5eTI?si=3GQegQg8oBvHWwER**
 
 ## Project Report
 
